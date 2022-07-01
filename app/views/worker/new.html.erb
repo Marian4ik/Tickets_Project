@@ -1,0 +1,30 @@
+<h1>Create Worker</h1>
+
+<%= form_with model: @worker, url: create_worker_path do |form| %>
+    
+    <div class="mb-3">
+    <%= form.label :Last_Name %>
+        <%= form.text_field :Last_Name, class: "form-control" %>
+    </div>
+    <%= form.label :First_Name %>
+    <div class="mb-3">
+        <%= form.password_field :First_Name, class: "form-control" %>
+    </div>
+    <%= form.label :Age %>
+    <div class="mb-3">
+        <%= form.text_field :Age, class: "form-control" %>
+    </div>
+    <%= form.label :Role %>
+    <div class="mb-3">
+        <%= form.text_field :Role, class: "form-control" %>
+    </div>
+    <%= form.label :Active %>
+    <div class="mb-3">
+        <%= form.text_field :Active, class: "form-control" %>
+    </div>
+
+
+    <div>
+        <%= form.submit "Create", class: "btn btn-primary"  %>
+    </div>
+<% end %>
