@@ -6,7 +6,7 @@
     </div>
     <%= form.label :First_Name %>
     <div class="mb-3">
-        <%= form.password_field :first_name, class: "form-control" %>
+        <%= form.text_field :first_name, class: "form-control" %>
     </div>
     <%= form.label :Age %>
     <div class="mb-3">
@@ -16,10 +16,7 @@
     <div class="mb-3">
         <%= form.select :role, Worker::ROLES %>
     </div>
-    <%= form.label :Active %>
-    <div class="mb-3">
-        <%= form.check_box :active %>
-    </div>
+    
 
 
     <div>

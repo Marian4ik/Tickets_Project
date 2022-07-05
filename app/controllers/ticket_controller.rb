@@ -1,13 +1,12 @@
-class WorkerController < ApplicationController 
-
+class TicketController < ApplicationController 
     def index
-        @workers = Worker.all
+        @tickets = Ticket.all
     end
 
     def create
-        @worker = Worker.new(worker_params)
+        @ticket = Ticket.new(worker_params)
     
-        if @worker.save
+        if @ticket.save
           redirect_to root_path,
                       flash: { notice: 'Worker was successfully created.' }
         else
@@ -15,10 +14,8 @@ class WorkerController < ApplicationController
                       flash: { alert: 'Invalid' }
         end
       end
-    
-      
-    
-      def worker_params
-        params.permit(:last_name, :first_name, :age, :role, :active)
+
+      def ticket_params
+        params.permit(:title, :description, :worker_id, :state, :created_at)
       end
 end

@@ -1,0 +1,20 @@
+<%= form_with model: ticket, url: url, html: { class: 'form' } do |form| %>
+    
+    <div class="mb-3">
+    <%= form.label :title %>
+        <%= form.text_field :last_name, class: "form-control" %>
+    </div>
+    <%= form.label :description %>
+    <div class="mb-3">
+        <%= form.text_field :first_name, class: "form-control" %>
+    </div>
+    <%= form.label :state %>
+    <div class="mb-3">
+        <%= form.select :state, Ticket::STATES %>
+    </div>
+
+
+    <div>
+        <%= form.submit "Create", class: "btn btn-primary"  %>
+    </div>
+<% end %>

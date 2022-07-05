@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get "create_worker", to: "worker#new"
   post "create_worker", to:  "worker#create"
   get 'worker', to: 'worker#index'
+
+  get "create_ticket", to: "ticket#new"
+  post "create_ticket", to:  "ticket#create"
+  get 'ticket', to: 'ticket#index'
 end
