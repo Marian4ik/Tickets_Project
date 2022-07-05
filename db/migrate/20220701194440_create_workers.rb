@@ -1,11 +1,11 @@
 class CreateWorkers < ActiveRecord::Migration[7.0]
   def change
-    create_table :worker do |t|
-      t.string :Last_Name
-      t.string :First_Name, null: false
-      t.integer :Age
-      t.string :Role
-      t.boolean :Active
+    create_table :workers do |t|
+      t.string :last_name
+      t.string :first_name, null: false
+      t.integer :age
+      t.string :role
+      t.boolean :active
 
       t.timestamps
     end

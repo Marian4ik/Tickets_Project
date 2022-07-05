@@ -1,5 +1,7 @@
 class Worker < ApplicationRecord
-     
+    ROLES = %w[Manager Developer UI/UX_Designer].freeze
+    
+    has_many :tickets
 
-    validates :First_Name, presence: true
+    validates :first_name, presence: true
 end

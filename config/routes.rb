@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "create_worker", to: "worker#new"
   post "create_worker", to:  "worker#create"
+  get 'worker', to: 'worker#index'
 end
