@@ -3,6 +3,10 @@ class Worker < ApplicationRecord
     
     has_many :tickets
 
-    validates :first_name, :last_name, presence: true
+    scope :active, -> {where(active: true)}
 
+    validates :first_name, :last_name, :age, presence: true
+    def full_name
+        first_name + " " + last_name
+    end
 end

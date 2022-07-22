@@ -13,6 +13,7 @@
         <th class='col-1'>Role</th>
         <th class='col-1'>Active</th>
         <th class='col-1'>Tickets</th>
+        <th class='col-1'>Worker_id</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
           <td><%= worker.role %></td>
           <td><%= worker.active %></td>
           <td><%= worker.tickets.count %></td>
+          <td><%= worker.id %></td>
         </tr>
       <% end %>
     </tbody>
