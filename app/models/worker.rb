@@ -1,6 +1,6 @@
 class Worker < ApplicationRecord
     ROLES = %w[Manager Developer UI/UX_Designer].freeze
-    
+    has_many :users
     has_many :tickets
 
     scope :active, -> {where(active: true)}

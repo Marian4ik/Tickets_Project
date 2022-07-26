@@ -13,10 +13,19 @@
   </head>
 
   <body>
-  <%= render partial: "shared/navbar" %>
-  <div class="container">
-    <%= render partial: "shared/flash" %>
-    <%= yield %>
-  </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to "Log out", destroy_user_session_path, class: "btn btn-primary", method: :delete, data: {turbo_method: :delete} %>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+    <% end %>
+    <%= render partial: "shared/navbar" %>
+    <div class="container">
+      <%= render partial: "shared/flash" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
