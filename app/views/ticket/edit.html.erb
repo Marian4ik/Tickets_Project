@@ -1,0 +1,4 @@
+<h1>Edit Ticket</h1>
+
+<%= render 'form', ticket: @ticket, url: ticket_path, method: "PUT" %>
+<%= button_to "Delete", @ticket, method: :delete, data: {confirm: "Are you sure?" }, class: "btn  btn-outline-danger" %>

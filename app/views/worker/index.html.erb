@@ -1,0 +1,32 @@
+<div class="d-flex align-items-center justify-content-center" >
+    <h1> Workers </h1>
+</div>
+
+<a class="btn btn-primary" href="/create_worker" role="button">Create_worker</a>
+
+<% if @workers.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th class='col-1'>Name</th>
+        <th class='col-1'>Age</th>
+        <th class='col-1'>Role</th>
+        <th class='col-1'>Active</th>
+        <th class='col-1'>Tickets</th>
+        <th class='col-1'>Worker_id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @workers.each do |worker| %>
+        <tr>
+          <td><%= worker.first_name %> <%= worker.last_name %> </td>
+          <td><%= worker.age %></td>
+          <td><%= worker.role %></td>
+          <td><%= worker.active %></td>
+          <td><%= worker.tickets.count %></td>
+          <td><%= worker.id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

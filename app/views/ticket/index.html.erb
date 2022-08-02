@@ -1,0 +1,32 @@
+<div class="d-flex align-items-center justify-content-center" >
+    <h1> Tickets </h1>
+</div>
+
+<% if @tickets.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th class='col-1'>Title</th>
+        <th class='col-1'>Description</th>
+        <th class='col-1'>Worker_id</th>
+        <th class='col-1'>State</th>
+        <th class='col-1'>created_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.title %></td>
+          <td><%= ticket.description %></td>
+          <td><%= ticket.worker_id %></td>
+          <td><%= ticket.state %></td>
+          <td><%= ticket.created_at %></td>
+          <td><%= link_to "Edit ticket", edit_ticket_path(ticket) %></td>
+        </tr>
+        
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to "Create_ticket", new_ticket_path, class: "btn btn-primary" %>
