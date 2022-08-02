@@ -9,4 +9,9 @@ class Worker < ApplicationRecord
     def full_name
         first_name + " " + last_name
     end
+
+    def is_dev?
+                
+        role == 'Developer'
+    end
 end
