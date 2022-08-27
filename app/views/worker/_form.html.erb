@@ -1,33 +1,30 @@
-<%# <% if current_user&.worker&.is_dev?  %> %>
-    <%= form_with model: worker, url: url, html: { class: 'form' } do |form| %>
-        
-        <div class="mb-3">
-        <%= form.label :Last_Name %>
-            <%= form.text_field :last_name, class: "form-control" %>
-        </div>
-        <%= form.label :First_Name %>
-        <div class="mb-3">
-            <%= form.text_field :first_name, class: "form-control" %>
-        </div>
-        <%= form.label :Age %>
-        <div class="mb-3">
-            <%= form.text_field :age, class: "form-control" %>
-        </div>
-        <%= form.label :Role %>
-        <div class="mb-3">
-            <%= form.select :role, Worker::ROLES %>
-        </div>
-        <%= form.label :active %>
-        <div class="mb-3">
-            <%= form.check_box :active %>
-        </div>
-        
+
+<%= form_with model: worker, url: url, html: { class: 'form' } do |form| %>
+    
+    <div class="mb-3">
+    <%= form.label :Last_Name %>
+        <%= form.text_field :last_name, class: "form-control" %>
+    </div>
+    <%= form.label :First_Name %>
+    <div class="mb-3">
+        <%= form.text_field :first_name, class: "form-control" %>
+    </div>
+    <%= form.label :Age %>
+    <div class="mb-3">
+        <%= form.text_field :age, class: "form-control" %>
+    </div>
+    <%= form.label :Role %>
+    <div class="mb-3">
+        <%= form.select :role, Worker::ROLES %>
+    </div>
+    <%= form.label :active %>
+    <div class="mb-3">
+        <%= form.check_box :active %>
+    </div>
+    
 
 
-        <div>
-            <%= form.submit "Create", class: "btn btn-primary"  %>
-        </div>
-    <% end %>
-<%# <% else %> %>
-    <%# <p>PIDORAS</p> %>
-<%# <% end %> %>
+    <div>
+        <%= form.submit "Create", class: "btn btn-primary"  %>
+    </div>
+<% end %>

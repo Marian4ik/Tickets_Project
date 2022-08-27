@@ -9,6 +9,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     respond_with resource
   end
 
+  def destroy
+    if User.worker_id.name.empty?
+      user.destroy
+    end
+  end
+
+
   protected
 
   def sign_up_params

@@ -1,4 +1,6 @@
 class TicketController < ApplicationController 
+  before_action :authenticate_user!
+
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]   
   def index
         @tickets = Ticket.all
