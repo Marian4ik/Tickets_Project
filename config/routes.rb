@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   # post "create_worker", to:  "worker#create"
   # get 'worker', to: 'worker#index'
 
-  resources :ticket  
+  resources :ticket do
+    member do
+      patch :change_status
+    end
+  end 
   #get "create_ticket", to: "ticket#new"
   #post "create_ticket", to:  "ticket#create"
   #get 'ticket', to: 'ticket#index'
