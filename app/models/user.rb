@@ -7,5 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   accepts_nested_attributes_for :worker
+  
 
 end

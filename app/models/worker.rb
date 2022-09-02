@@ -17,4 +17,5 @@ class Worker < ApplicationRecord
                 
         role == 'Developer'
     end
+
 end

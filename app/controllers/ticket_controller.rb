@@ -7,7 +7,8 @@ class TicketController < ApplicationController
   end
 
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = Ticket.new(ticket_params.merge(creator_worker_id: current_user.worker_id))
+    
 
     if @ticket.save
       redirect_to ticket_index_path,
@@ -45,9 +46,9 @@ class TicketController < ApplicationController
 
   def ticket_params
     if params[:ticket].present?
-      params.require(:ticket).permit(:id, :title, :description, :worker_id, :state, :created_at, :status)
+      params.require(:ticket).permit(:id, :title, :description, :worker_id, :state, :created_at, :status, :creator_worker_id)
     else
-      params.permit(:id, :title, :description, :worker_id, :state, :created_at, :status)
+      params.permit(:id, :title, :description, :worker_id, :state, :created_at, :status, :creator_worker_id)
     end
   end
 
@@ -62,5 +63,7 @@ class TicketController < ApplicationController
     end
     redirect_to @ticket, notice: "Status updated to #{@ticket.status}"
   end
+
+
 
 end

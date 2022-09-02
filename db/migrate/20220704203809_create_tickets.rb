@@ -5,7 +5,6 @@ class CreateTickets < ActiveRecord::Migration[7.0]
       t.string :description
       t.integer :worker_id
       t.string :state
-
       t.timestamps
     end
   end

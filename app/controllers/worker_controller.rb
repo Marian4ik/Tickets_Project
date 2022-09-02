@@ -10,7 +10,7 @@ class WorkerController < ApplicationController
         redirect_to :action => 'list_projects'    
       end 
     end
-    
+
     def index
       @workers = Worker.all
     end
@@ -31,6 +31,7 @@ class WorkerController < ApplicationController
     end
   
     def update 
+
       if @worker.update(worker_params)
         redirect_to worker_index_path,
                     flash: { notice: 'Worker was successfully update.' }
@@ -52,8 +53,15 @@ class WorkerController < ApplicationController
     end
 
     def worker_params
+      if params[:worker].present?
+        params.require(:worker).permit(:worker_id, :last_name, :first_name, :age, :role, :active)
+      else
         params.permit(:worker_id, :last_name, :first_name, :age, :role, :active)
+      end
     end
+  
+
+
     def set_worker
       @worker = Worker.find(params[:id])
     end

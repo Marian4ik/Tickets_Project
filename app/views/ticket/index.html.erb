@@ -12,6 +12,8 @@
         <th class='col-1'>State</th>
         <th class='col-1'>Status</th>
         <th class='col-1'>created_at</th>
+        <th class='col-1'>creator_worker_id</th>
+
       </tr>
     </thead>
     <tbody>
@@ -27,6 +29,8 @@
             <% end %>
           </td>
           <td><%= ticket.created_at %></td>
+          <td><%= ticket.creator_worker_id %></td>
+
           <td><%= link_to "Edit ticket", edit_ticket_path(ticket) %></td>
         </tr>
         
