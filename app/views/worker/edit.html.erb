@@ -1,0 +1,6 @@
+<h1>Edit Worker</h1>
+
+<%= render 'form', worker: @worker, url: worker_path, method: "PUT" %>
+<% if current_user.admin? %>
+    <%= button_to "Delete", @worker, method: :delete, data: {confirm: "Are you sure?" }, class: "btn  btn-outline-danger" %>
+<% end %>

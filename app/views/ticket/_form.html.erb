@@ -20,7 +20,10 @@
         <%= form.label :state %>
         <%= form.select :state, Ticket::STATES %>
     </div>
+    <div class="mb-3">
+        <%= form.label :status %>
+        <%= form.select :status, Ticket::STATUSES %>
+    </div>
     
-
     <%= form.submit "Submit", class: "btn btn-primary"  %>
 <% end %>

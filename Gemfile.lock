@@ -111,6 +111,10 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     libv8 (3.16.14.19)
     libv8 (3.16.14.19-x86_64-linux)
     loofah (2.18.0)
@@ -253,6 +257,7 @@ DEPENDENCIES
   execjs
   importmap-rails
   jbuilder
+  letter_opener
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)

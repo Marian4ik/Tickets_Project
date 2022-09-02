@@ -2,7 +2,6 @@
     <h1> Workers </h1>
 </div>
 
-<a class="btn btn-primary" href="/create_worker" role="button">Create_worker</a>
 
 <% if @workers.present? %>
   <table>
@@ -25,6 +24,11 @@
           <td><%= worker.active %></td>
           <td><%= worker.tickets.count %></td>
           <td><%= worker.id %></td>
+          <td>
+            <% if worker.id == current_user.worker_id || current_user::worker.role == "Manager" || current_user.admin? %>
+              <%= link_to "Edit worker", edit_worker_path(worker) %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -4,8 +4,11 @@ class Worker < ApplicationRecord
     has_many :tickets
 
     scope :active, -> {where(active: true)}
+    
+    validates :first_name, presence: true, length: { maximum: 20 }, format: { with: /\A\D+\z/, message: "Numbers are not allowed" }
+    validates :last_name, presence: true, length: { maximum: 20 }, format: { with: /\A\D+\z/, message: "Numbers are not allowed" }
+    validates :age, presence: true, numericality: { in: 16..60, message: "Your age is not appropriate" }
 
-    validates :first_name, :last_name, :age, presence: true
     def full_name
         first_name + " " + last_name
     end
@@ -14,4 +17,5 @@ class Worker < ApplicationRecord
                 
         role == 'Developer'
     end
+
 end

@@ -4,12 +4,17 @@ Rails.application.routes.draw do
   root to: "home#index"
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :worker  
 
-  get "create_worker", to: "worker#new"
-  post "create_worker", to:  "worker#create"
-  get 'worker', to: 'worker#index'
+  # get "create_worker", to: "worker#new"
+  # post "create_worker", to:  "worker#create"
+  # get 'worker', to: 'worker#index'
 
-  resources :ticket  
+  resources :ticket do
+    member do
+      patch :change_status
+    end
+  end 
   #get "create_ticket", to: "ticket#new"
   #post "create_ticket", to:  "ticket#create"
   #get 'ticket', to: 'ticket#index'
